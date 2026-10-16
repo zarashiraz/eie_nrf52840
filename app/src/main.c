@@ -9,13 +9,21 @@ int main(void) {
     LED_init();
 
     while (1) {
-        LED_toggle(LED0);
-        k_msleep(350);
-        LED_toggle(LED1);
-        LED_toggle(LED2);
-        LED_toggle(LED3);
-
+        LED_set(LED0, LED_ON);
         k_msleep(500);
+        LED_set(LED0, LED_OFF);
+
+        LED_set(LED1, LED_ON);
+        k_msleep(500);
+        LED_set(LED1, LED_OFF);
+
+        LED_set(LED2, LED_ON);
+        k_msleep(500);
+        LED_set(LED2, LED_OFF);
+
+        LED_set(LED3, LED_ON);
+        k_msleep(500);
+        LED_set(LED3, LED_OFF);
     }
     return 0;
 }
