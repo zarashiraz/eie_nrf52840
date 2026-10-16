@@ -10,6 +10,7 @@ int main(void) {
 
     while (1) {
         LED_toggle(LED0);
+        k_msleep(350);
         LED_toggle(LED1);
         LED_toggle(LED2);
         LED_toggle(LED3);
