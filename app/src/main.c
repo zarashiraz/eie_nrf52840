@@ -6,24 +6,13 @@
 #include "LED.h"
 
 int main(void) {
-    LED_init();
-
-    while (1) {
-        LED_set(LED0, LED_ON);
-        k_msleep(500);
-        LED_set(LED0, LED_OFF);
-
-        LED_set(LED1, LED_ON);
-        k_msleep(500);
-        LED_set(LED1, LED_OFF);
-
-        LED_set(LED2, LED_ON);
-        k_msleep(500);
-        LED_set(LED2, LED_OFF);
-
-        LED_set(LED3, LED_ON);
-        k_msleep(500);
-        LED_set(LED3, LED_OFF);
+    if (LED_init() < 0) {
+        return 0;
     }
+    LED_blink(LED0, LED_2HZ);
+    while (1) {
+        k_msleep(1000);
+    }
+
     return 0;
 }
